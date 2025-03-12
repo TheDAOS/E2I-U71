@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Intensity Tracker</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loading.css">
+</head>
+
+<body>
+
+    <div id="loading" style="display: none;">
+    <!-- <div id="loading"> -->
+        <!-- From Uiverse.io by Nawsome -->
+        <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+            <div class="wheel"></div>
+            <div class="hamster">
+                <div class="hamster__body">
+                    <div class="hamster__head">
+                        <div class="hamster__ear"></div>
+                        <div class="hamster__eye"></div>
+                        <div class="hamster__nose"></div>
+                    </div>
+                    <div class="hamster__limb hamster__limb--fr"></div>
+                    <div class="hamster__limb hamster__limb--fl"></div>
+                    <div class="hamster__limb hamster__limb--br"></div>
+                    <div class="hamster__limb hamster__limb--bl"></div>
+                    <div class="hamster__tail"></div>
+                </div>
+            </div>
+            <div class="spoke"></div>
+        </div>
+    </div>
+
+    <main id="main">
+        <div class="topBar">
+            <form id="inputForm" class="card formCard">
+                <label for="dateInput">Date : </label>
+                <input type="date" name="dateInput" id="dateInput">
+
+                <input type="submit" value="Search">
+            </form>
+
+            <div id="filterCard" class="card" style="display: none;">
+                <label for="categoriesFilter">Filter categories: </label>
+                <select name="categoriesFilter" id="categoriesFilter">
+                    <option value="all">All</option>
+                    <option value="low">Low</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                    <option value="veryHigh">Very High</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="tableCard" class="card" style="display: none;">
+            <table id="dataTable">
+                <tr>
+                    <th rowspan="2">No.</th>
+                    <th rowspan="2" id="Time Period">Time Period</th>
+                    <th colspan="3">Carbon intensity value (gCO2/kWh)</th>
+                </tr>
+                <tr>
+                    <th id="ForecastValue">Forecast Value</th>
+                    <th id="ActualValue">Actual Value</th>
+                    <th id="Category">Category</th>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+:root {
+    --primary-a0: #f05347;
+    --primary-a10: #f5695a;
+    --primary-a20: #fa7e6d;
+    --primary-a30: #fd9180;
+    --primary-a40: #ffa494;
+    --primary-a50: #ffb7a9;
+
+    --surface-a0: #121212;
+    --surface-a10: #282828;
+    --surface-a20: #3f3f3f;
+    --surface-a30: #575757;
+    --surface-a40: #717171;
+    --surface-a40: #8b8b8b;
+}
+
+body {
+    background-color: var(--surface-a0);
+    color: ghostwhite;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main>* {
+    margin-bottom: 10px;
+}
+
+header {
+    background-color: var(--surface-a10);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.topBar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--surface-a10);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formCard {
+    width: 400px;
+    /* margin: auto; */
+}
+
+label {
+    margin: 0 4px;
+}
+
+input,
+select {
+    background-color: #121212;
+    color: ghostwhite;
+    border: 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+option {
+    border: 0;
+}
+
+input[type=submit] {
+    /* margin-top: 10px; */
+    background-color: #f05347;
+    color: #121212;
+    font-size: large;
+    font-weight: bold;
+}
+
+table,
+th,
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: var(--surface-a20);
+}
+
+tr {
+    border-bottom: 1px solid var(--surface-a20);
+}
