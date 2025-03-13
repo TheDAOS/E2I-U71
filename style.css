@@ -14,10 +14,6 @@
     --surface-a40: #8b8b8b;
 }
 
-html {
-    background-color: var(--surface-a0);
-}
-
 body {
     background-color: var(--surface-a0);
     color: ghostwhite;

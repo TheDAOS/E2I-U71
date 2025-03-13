@@ -11,7 +11,7 @@ async function getData(dateInput) {
 }
 
 
-async function displayData(dateInput, loading=false) {
+async function displayData(dateInput, loading = false, mySort) {
     try {
         if (loading) {
             document.getElementById('loading').style.display = "flex";
@@ -47,6 +47,10 @@ async function displayData(dateInput, loading=false) {
             return filterValue === element.intensity.index;
         })
 
+        if (mySort) {
+            data.sort(mySort);
+        }
+
         let count = 1;
 
         data.forEach(row => {
@@ -81,7 +85,6 @@ async function displayData(dateInput, loading=false) {
 }
 
 let categoriesFilter = document.getElementById('categoriesFilter');
-
 categoriesFilter.addEventListener('change', () => {
     let dateInput = document.getElementById('dateInput').value;
     displayData(dateInput);
@@ -90,8 +93,45 @@ categoriesFilter.addEventListener('change', () => {
 document.getElementById('inputForm').addEventListener('submit', event => {
     event.preventDefault();
 
-    let dateInput = document.getElementById('dateInput').value;
+    const dateInput = document.getElementById('dateInput').value;
 
     // console.log(dateInput);
     displayData(dateInput, true);
+});
+
+
+let timeSort = "asc";
+document.getElementById('TimePeriod').addEventListener('click', () => {
+    let dateInput = document.getElementById('dateInput').value;
+    if (timeSort === 'asc') {
+        displayData(dateInput, false, (a, b) => new Date(a.from) - new Date(b.from));
+        timeSort = "des";
+    } else {
+        displayData(dateInput, false, (a, b) => new Date(b.from) - new Date(a.from));
+        timeSort = "asc";
+    }
+});
+
+let forecastSort = "asc";
+document.getElementById('ForecastValue').addEventListener('click', () => {
+    let dateInput = document.getElementById('dateInput').value;
+    if (forecastSort === 'asc') {
+        displayData(dateInput, false, (a, b) => a.intensity.forecast - b.intensity.forecast);
+        forecastSort = "des";
+    } else {
+        displayData(dateInput, false, (a, b) => b.intensity.forecast - a.intensity.forecast);
+        forecastSort = "asc";
+    }
+});
+
+let actualSort = "asc";
+document.getElementById('ActualValue').addEventListener('click', () => {
+    let dateInput = document.getElementById('dateInput').value;
+    if (actualSort === 'asc') {
+        displayData(dateInput, false, (a, b) => (a.intensity.actual || 0) - (b.intensity.actual || 0));
+        actualSort = "des";
+    } else {
+        displayData(dateInput, false, (a, b) => (b.intensity.actual || 0) - (a.intensity.actual || 0));
+        actualSort = "asc";
+    }
 });
