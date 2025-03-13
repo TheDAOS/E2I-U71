@@ -14,11 +14,17 @@
     --surface-a40: #8b8b8b;
 }
 
+@font-face {
+    font-family: 'LED Dot Matrix';
+    src: url('https://thedaos.github.io/Z06-ER2-NWI/LED%20Dot-Matrix%20400.ttf') format('truetype');
+}
+
 body {
     background-color: var(--surface-a0);
     color: ghostwhite;
     /* font-family: 'Courier New', Courier, monospace; */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'LED Dot Matrix', 'Courier New', Courier, monospace;
 }
 
 main>* {
@@ -88,6 +94,7 @@ input[type=submit] {
 table,
 th,
 td {
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
     padding: 10px;
 }
